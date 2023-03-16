@@ -1,0 +1,33 @@
+.auto-textarea {
+  display: flex;
+    align-items: flex-end;
+    gap: 4px;
+    border: 1px solid #d9d9d9;
+    border-radius: 6px;
+    textarea {
+      border: none !important;
+      &:focus{
+        border: none !important;
+        box-shadow: none !important;
+      }
+    }
+  &:hover{
+    border-color: #4096ff;
+    .submit .anticon-send {
+      color: #1677ff;
+    }
+  }
+
+  .submit {
+    height: 32px;
+    padding: 4px;
+    .anticon-send {
+      rotate: -30deg;
+      //color: #1677ff;
+      color: rgba(0, 0, 0, 0.88);
+    }
+  }
+}
+.auto-textarea-error {
+  border-color: red; 
+}
