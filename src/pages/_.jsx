@@ -4,17 +4,11 @@ import './index.less'
 import { Image, Select, Input, Button ,Spin,message, Divider, Form} from 'antd';
 import { SendOutlined, QuestionCircleOutlined, AudioOutlined ,RedditOutlined} from '@ant-design/icons';
 import AutoTextArea from '@/components/Textarea/index';
-console.log(AutoTextArea)
-interface answerListType{
-	type: string,
-	content?: string,
-	isFinshed: number,
-}
 function App() {
-  	const [inputValue, setInputValue] = useState<string>("")
-	const [answerList, setAnswerList] = useState<answerListType[]>([])
+  const [inputValue, setInputValue] = useState("")
+	const [answerList, setAnswerList] = useState([])
   const [type, setType] = useState('text');
-	const preItem = useRef<HTMLDivElement>(null)
+	const preItem = useRef(null)
   const [formRef] = Form.useForm();
 	const [messageApi,contextHolder] = message.useMessage();
 
