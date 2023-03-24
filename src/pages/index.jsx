@@ -118,7 +118,7 @@ export default function Home() {
                     value={inputValue}
                     onKeyDown={onkeydowns}
                     onPressEnter={() => onSubmit()}
-                    onChange={(e) => setInputValue(e.target.value.trim())}
+                    onChange={(e) => setInputValue(e.target.value)}
                     bordered={false}
                   />
                   <img src={fnImgSrc()} alt="" className={isProhibit ? "svgImg isShowSvgImg" : "svgImg"} onClick={() => onSubmit()}/>
