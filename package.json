@@ -9,10 +9,17 @@
     "start": "npm run dev"
   },
   "dependencies": {
+    "@ant-design/icons": "^5.0.1",
     "@umijs/max": "^4.0.56",
-    "antd": "^5.3.0",
     "chatgpt": "^5.1.1",
-    "umi": "^4.0.56"
+    "umi": "^4.0.56",
+    "antd": "^5.3.2",
+    "json5": "^2.2.3",
+    "react-markdown": "^8.0.6",
+    "react-syntax-highlighter": "^15.5.0",
+    "rehype-raw": "^6.1.1",
+    "remark-gfm": "^3.0.1",
+    "string-width": "^5.1.2"
   },
   "devDependencies": {
     "@types/react": "^18.0.0",

@@ -1,64 +1,423 @@
-
-#root {
-	width: 100%;
-	margin: 0 auto;
-	box-sizing: border-box;
-
-}
-
-.App{
-	width: 60%;
-	margin: 0 auto;
-	height: 100vh;
+.idea-talk-box {
+  height: 100%;
+  padding-bottom: 20px;
+  padding-top: 23px;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
-	box-sizing: border-box;
-	.input_box{
-	}
-	.answer_box{
-		width: 100%;
-    flex: auto;
-		padding-top: 12px;
-    margin-bottom: 12px;
-    border-bottom: 1px solid rgba(0,0,0,0.1);
-		display: flex;
-		flex-direction: column;
-		align-items: flex-start;
-		overflow: auto;
-		.answer{
-			width: 100%;
-			.item{
-				padding:8px 4px;
-				text-align: left;
-				border-bottom: 1px solid rgb(5 5 5 / 10%);
-				width: 100%;
-				min-height: 20px;
-				margin-bottom: 10px;
-				display: flex;
-				.span{
-					padding-left: 10px;
-					white-space: pre-wrap;
-				}
-			}
-		}
-	}
-  .submit {
-    
-    .anticon-send {
-      rotate: -30deg;
-      //color: #1677ff;
-      color: rgba(0, 0, 0, 0.88);
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background-size: cover !important;
+  //ideatalk 标题
+  &-ideatalk {
+    width: 800px;
+    font-family: PingFangSC-Semibold;
+    font-size: 42px;
+    font-weight: normal;
+    letter-spacing: 0em;
+    color: #000000;
+    letter-spacing: 0em;
+    line-height: 59px;
+    text-align: center;
+    margin-bottom: 18px;
+    position: relative;
+    &-imgs {
+      width: 24px;
+      height: 24px;
+      display: block;
+      position: absolute;
+      cursor: pointer;
+      left: -34px;
+      top: 6px;
     }
   }
-}
-.ant-input-affix-wrapper:hover{
-  .submit .anticon-send {
-  color: #1677ff;
+  &-ideatalks {
+    margin-bottom: 16px;
+    line-height: 34px;
+    font-size: 24px;
+    text-align: left;
   }
-}
-@media (max-width: 768px) {
-  .App {
+  //标题
+  &-title {
+    width: 800px;
+  }
+
+  &-outerLayer {
     width: 100%;
-    padding: 0 8px;
+    display: flex;
+    justify-content: center;
+    &-smallbox {
+      width: 100%;
+      // height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: center;
+    }
+  }
+  //聊天内容区域
+  &-content {
+    width: 100%;
+    flex: 1;
+    overflow: auto;
+  }
+
+  //input打字区域
+  &-bigBox {
+    width: 800px;
+    // min-height: 56px;
+    padding: 2px;
+    box-sizing: border-box;
+    border-radius: 30px;
+    margin-bottom: 24px;
+    background: url("https://img.alicdn.com/imgextra/i3/O1CN01zBv5he1ZX1Pz82hli_!!6000000003203-2-tps-1840-352.png");
+    background-position: center;
+    // box-shadow: 0px 4px 12px 0px rgba(193, 209, 223, 0.2);
+    margin: 0 auto;
+    &-input {
+      width: 100%;
+      display: flex;
+      padding: 12px 24px;
+      background: #ffffff;
+      box-sizing: border-box;
+      border-radius: 30px;
+      box-sizing: border-box;
+      align-items: center;
+      .OptionsMenuBox {
+        width: 24px;
+        height: 24px;
+        position: relative;
+        margin-right: 8px;
+        .inputIcon {
+          width: 24px;
+          height: 24px;
+          border-radius: 3px;
+          cursor: pointer;
+        }
+        //h5chapGPT下拉
+        .H5ChatGPTMenu {
+          display: none;
+        }
+        //下拉菜单
+        .OptionsMenu {
+          position: absolute;
+          left: 0;
+          bottom: 42px;
+          background: #ffffff;
+          border-radius: 8px;
+          // display: none;
+          &-ul {
+            width: max-content;
+            padding: 8px 24px 8px 0px;
+            list-style: none;
+            margin: 0;
+            &-li {
+              list-style-type: none;
+              display: flex;
+              align-items: center;
+              cursor: pointer;
+              &-check {
+                margin-right: 4px;
+                width: 24px;
+                height: 24px;
+                img {
+                  height: 100%;
+                  width: 100%;
+                }
+                visibility: hidden;
+              }
+              &-img {
+                width: 20px;
+                height: 20px;
+                margin-right: 4px;
+                border-radius: 50%;
+              }
+              &-text {
+                font-family: PingFangSC-Regular;
+                font-size: 14px;
+                font-weight: normal;
+                letter-spacing: 0em;
+                line-height: 24px;
+                color: #3d3d3d;
+              }
+            }
+            &-li:hover {
+              background: #d8d8d8;
+              // .OptionsMenu-ul-li-check {
+              //   visibility: visible;
+              // }
+            }
+          }
+          &-footerText {
+            margin-left: 28px;
+            font-family: PingFangSC-Regular;
+            font-size: 12px;
+            font-weight: normal;
+            line-height: 17px;
+            letter-spacing: 0em;
+            color: #999999;
+          }
+        }
+      }
+
+      .typing {
+        flex: 1;
+        background-color: #ffffff;
+        width: 100%;
+        border: none;
+        padding-right: 0;
+        padding-left: 0;
+        font-family: PingFangSC-Regular;
+        font-weight: normal;
+        letter-spacing: 0em;
+        line-height: 1;
+        &:focus {
+          outline: none !important;
+          border: none;
+          box-shadow: none;
+        }
+      }
+      .svgImg {
+        width: 24px;
+        height: 24px;
+        cursor: pointer;
+      }
+      //lodaing动画
+      @keyframes lodaing {
+        from {
+          transform: rotate(0deg);
+        }
+        25% {
+          transform: rotate(90deg);
+        }
+        50% {
+          transform: rotate(180deg);
+        }
+        75% {
+          transform: rotate(270deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+      .isShowSvgImg {
+        animation: lodaing 600ms infinite;
+      }
+    }
+  }
+
+  .inputStyle {
+    margin-bottom: 0;
+  }
+
+  //运营广告位
+  &-input-advertising {
+    width: 800px;
+    height: 150px;
+    margin-top: 94px;
+  }
+  .outerLayerIsHeight {
+    height: calc(100% - 50.5px);
+  }
+  .next-medium {
+    margin-bottom: 0;
   }
 }
+.styleBox {
+  padding-top: 42px;
+}
+//pc窄屏
+@media only screen and (min-width: 751px) and (max-width: 1200px) {
+  /* 对应的样式 */
+  .idea-talk-box-ideatalk,
+  .ChatBox-contents-inner-box,
+  .next-form,
+  .idea-talk-box-bigBox,
+  .idea-talk-box-input-advertising,
+  .idea-talk-box-bottomTitle,
+  .idea-talk-box-title {
+    width: 100%;
+  }
+
+  .idea-talk-box {
+    padding-left: 30px;
+    padding-right: 30px;
+    box-sizing: border-box;
+  }
+}
+//监听移动端
+@media only screen and (max-width: 750px) {
+  .idea-talk-box {
+    padding-bottom: 32rpx;
+    padding-top: 0;
+    //ideatalk 标题
+    &-ideatalk {
+      width: 690rpx;
+      font-size: 80rpx;
+      line-height: 112rpx;
+      margin-bottom: 32rpx;
+      &-imgs {
+        display: none;
+      }
+    }
+    &-ideatalks {
+      display: none;
+    }
+    //标题
+    &-title {
+      width: 686rpx;
+    }
+
+    //input打字区域
+    &-bigBox {
+      width: 686rpx;
+      padding: 4rpx;
+      // min-height: 112rpx;
+      box-sizing: border-box;
+      border-radius: 60rpx;
+      background: url("https://img.alicdn.com/imgextra/i1/O1CN018HaLVl2AFkGGu572y_!!6000000008174-2-tps-926-352.png");
+      margin-bottom: 52rpx;
+      background-position: center;
+      &-input {
+        width: 100%;
+        // padding: 28rpx 44rpx;
+        // border: 2rpx solid #0057ff;
+        // box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.12);
+        border-radius: 60rpx;
+
+        box-sizing: border-box;
+        .OptionsMenuBox {
+          width: 48rpx;
+          height: 48rpx;
+          position: relative;
+          margin-bottom: 0;
+          display: flex;
+          align-items: center;
+          .inputIcon {
+            width: 48rpx;
+            height: 48rpx;
+            border-radius: 6rpx;
+            cursor: pointer;
+            margin-right: 16rpx;
+          }
+          //h5chapGPT下拉
+          // .H5ChatGPTMenu {
+          //   display: flex;
+          //   align-items: center;
+          //   &-font {
+          //     font-family: PingFangSC-Regular;
+          //     font-size: 22rpx;
+          //     font-weight: normal;
+          //     letter-spacing: 0em;
+          //     color: #666666;
+          //     line-height: 32rpx;
+          //     margin: 0 8rpx;
+          //   }
+          //   &-icon {
+          //     width: 12rpx;
+          //     height: 100%;
+          //     transition: all 0.5s;
+          //     img {
+          //       width: 12rpx;
+          //       height: 8rpx;
+          //     }
+          //   }
+          //   .iconStyles {
+          //     transform: rotate(180deg);
+          //   }
+          // }
+          // //下拉菜单
+          // .OptionsMenu {
+          //   position: absolute;
+          //   left: 0;
+          //   bottom: 42px;
+          //   background: #ffffff;
+          //   border-radius: 8px;
+          //   // display: none;
+          //   &-ul {
+          //     width: max-content;
+          //     padding: 8px 24px 8px 0px;
+          //     list-style: none;
+          //     margin: 0;
+          //     &-li {
+          //       list-style-type: none;
+          //       display: flex;
+          //       align-items: center;
+          //       cursor: pointer;
+          //       &-check {
+          //         margin-right: 4px;
+          //         width: 24px;
+          //         height: 24px;
+          //         img {
+          //           height: 100%;
+          //           width: 100%;
+          //         }
+          //         visibility: hidden;
+          //       }
+          //       &-img {
+          //         width: 20px;
+          //         height: 20px;
+          //         margin-right: 4px;
+          //         border-radius: 50%;
+          //       }
+          //       &-text {
+          //         font-family: PingFangSC-Regular;
+          //         font-size: 14px;
+          //         font-weight: normal;
+          //         letter-spacing: 0em;
+          //         line-height: 24px;
+          //         color: #3d3d3d;
+          //       }
+          //     }
+          //     &-li:hover {
+          //       background: #d8d8d8;
+          //       // .OptionsMenu-ul-li-check {
+          //       //   visibility: visible;
+          //       // }
+          //     }
+          //   }
+          //   &-footerText {
+          //     margin-left: 28px;
+          //     font-family: PingFangSC-Regular;
+          //     font-size: 12px;
+          //     font-weight: normal;
+          //     line-height: 17px;
+          //     letter-spacing: 0em;
+          //     color: #999999;
+          //   }
+          // }
+        }
+        .typing {
+          flex: 1;
+        }
+        .svgImg {
+          width: 38rpx;
+          height: 38rpx;
+        }
+      }
+    }
+
+    //运营广告位
+    &-input-advertising {
+      width: 690rpx;
+      height: 129.38rpx;
+      // margin-bottom: 28.68rpx;
+    }
+    //底部文案
+    &-bottomTitle {
+      width: 690rpx;
+      margin-bottom: 0;
+      font-family: PingFangSC-Regular;
+      font-size: 24rpx;
+      line-height: 36rpx;
+    }
+    .outerLayerIsHeight {
+      height: 100%;
+    }
+  }
+  .styleBox {
+    padding-top: 112rpx;
+  }
+}
+
